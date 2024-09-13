@@ -35,38 +35,6 @@ If you want to run a benchmark, go to the benchmarking folder associated with th
 python3 main.py
 ```
 
-1. **Write the Circuit:**
-   Define your circuit in Go, including the constraints. For example:
-
-```go
-type Circuit struct {
-    X frontend.Variable
-    Y frontend.Variable `gnark:",public"`
-}
-```
-
-2. **Compile the Circuit:**
-   Compile the circuit using:
-
-```go
-cs, err := frontend.Compile(ecc.BN254, r1cs.NewBuilder, &myCircuit)
-```
-
-3. **Setup and Prove:**
-   Run the setup and generate the proof using Groth16:
-
-```go
-pk, vk, err := groth16.Setup(cs)
-proof, err := groth16.Prove(cs, pk, witness)
-```
-
-4. **Verify the Proof:**
-   Verify the generated proof with the verification key:
-
-```go
-err := groth16.Verify(proof, vk, publicWitness)
-```
-
 ## License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details.
