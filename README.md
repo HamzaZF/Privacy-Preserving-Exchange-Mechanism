@@ -23,7 +23,17 @@ This will download and install the Gnark library along with its dependencies.
 
 ## Usage
 
-To compile and prove a ZKP using Gnark, you need to first write the circuit, compile it, and then run the proving system. For example, here’s how you can prove using Groth16:
+To compile and prove a ZKP, you need to place yourself in the desired proof folder (ProofDraw, ProofF, ProofReg or ProofTx) then run the command :
+
+```bash
+go run main.go
+```
+
+If you want to run a benchmark, go to the benchmarking folder associated with the proof and run the python script with the command :
+
+```bash
+python3 main.py
+```
 
 1. **Write the Circuit:**
    Define your circuit in Go, including the constraints. For example:
